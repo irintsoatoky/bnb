@@ -2,16 +2,17 @@
 
 namespace App\Entity;
 
+use App\Entity\Image;
 use Cocur\Slugify\Slugify;
 use App\Repository\AdRepository;
-use Doctrine\Common\Collections\ArrayCollection;
-use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
+use Doctrine\Common\Collections\Collection;
+use Doctrine\Common\Collections\ArrayCollection;
 use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * @ORM\Entity(repositoryClass=AdRepository::class)
- *  @ORM\HasLifecycleCallbacks()
+ * @ORM\HasLifecycleCallbacks()
  */
 class Ad
 {
@@ -64,6 +65,12 @@ class Ad
      * @Assert\Valid()
      */
     private $images;
+
+    /**
+     * @ORM\ManyToOne(targetEntity=User::class, inversedBy="ads")
+     * @ORM\JoinColumn(nullable=false)
+     */
+    private $author;
 
     public function __construct()
     {
@@ -201,6 +208,18 @@ class Ad
                 $image->setAd(null);
             }
         }
+
+        return $this;
+    }
+
+    public function getAuthor(): ?User
+    {
+        return $this->author;
+    }
+
+    public function setAuthor(?User $author): self
+    {
+        $this->author = $author;
 
         return $this;
     }
