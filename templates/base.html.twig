@@ -7,46 +7,27 @@
 			{% block title %}Welcome!
 			{% endblock %}
 		</title>
-		{# Run `composer require symfony/webpack-encore-bundle`
-																																		           and uncomment the following Encore helpers to start using Symfony UX #}
+		{# Run `composer require symfony/webpack-encore-bundle` and uncomment the following Encore helpers to start using Symfony UX #}
 
-		<link rel="stylesheet" href="css/bootstrap.min.css">
-		<link rel="stylesheet" href="css/font-awesome.min.css">
+		<link rel="stylesheet" href="/css/bootstrap.min.css">
+		<link rel="stylesheet" href="/css/font-awesome.min.css">
+		<link rel="stylesheet" href="/css/app.css">
 		{% block stylesheets %}
 			{# {{ encore_entry_link_tags('app') }} #}
 		{% endblock %}
 	</head>
 	<body>
-		<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
-			<a class="navbar-brand" href="{#{ path("app_home") }#}">
-				<b>BNB</b>
-			</a>
-			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
-				<span class="navbar-toggler-icon"></span>
-			</button>
+		{% include 'partials/header.html.twig' %}
 
-			<div class="collapse navbar-collapse" id="navbarColor01">
-				<ul class="navbar-nav mr-auto">
-					<li class="nav-item active">
-						<a class="nav-link" href="{#{ path("app_home") }#}">
-							<span class="fa fa-home"></span>
-							Accueil
-						</a>
-					</li>
-					<li class="nav-item">
-						<a class="nav-link" href="{#{ path("ad_index") }#}">
-							<span class="fa fa-hotel"></span>
-							Annonces
-						</a>
-					</li>
-				</ul>
-				<ul class="navbar-nav ml-auto">
-					<li class="nav-item">
-						<a href="#" class="nav-link">Mon compte !</a>
-					</li>
-				</ul>
-			</div>
-		</div>
+		{% block body %}{% endblock %}
+
+		{% include 'partials/footer.html.twig' %}
+
+		<script src="/js/jquery-3.3.1.min.js"></script>
+		<script src="/js/popper.min.js"></script>
+		<script src="/js/bootstrap.min.js"></script>
+		{% block javascripts %}
+			{#{{ encore_entry_script_tags('app') }}#}
+		{% endblock %}
 	</body>
-</html></nav>{% block body %}{% endblock %}<script src="js/jquery-3.3.1.min.js"></script><script src="js/popper.min.js"></script><script src="js/bootstrap.min.js"></script>{% block javascripts %}
-{#{{ encore_entry_script_tags('app') }}#}{% endblock %}</body></html>
+</html>
