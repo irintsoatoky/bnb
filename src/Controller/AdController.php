@@ -40,7 +40,7 @@ class AdController extends AbstractController
         $ad = new Ad();
 
         // Extraire une propriété dans $request
-        //$request->request->get('title');
+        // $request->request->get('title');
 
         $form = $this->createForm(AdType::class, $ad);
 
@@ -51,6 +51,9 @@ class AdController extends AbstractController
                 $image->setAd($ad);
                 $manager->persist($image);
             }
+
+            // ajouter l'auteur connecté lors de la création d'annonce
+            $ad->setAuthor($this->getUser());
 
             $manager->persist($ad);
             $manager->flush();

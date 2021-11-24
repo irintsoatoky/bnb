@@ -8,7 +8,18 @@ div.ad-title {
     background-position: center center;
 }
 
-div.ad-title h1,
-div.ad-title p {}
+.avatar {
+    max-width: 128px;
+    max-height: 128px;
+    border-radius: 50%;
+}
 
-div.carousel-caption {}
+.avatar-medium {
+    max-width: 64px;
+    max-height: 64px;
+}
+
+.avatar-mini {
+    max-width: 32px;
+    max-height: 32px;
+}
