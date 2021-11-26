@@ -13,6 +13,7 @@
         "doctrine/doctrine-bundle": "^2.4",
         "doctrine/doctrine-migrations-bundle": "^3.2",
         "doctrine/orm": "^2.10",
+        "eternicode/bootstrap-datepicker": "^1.9",
         "fakerphp/faker": "^1.16",
         "omines/datatables-bundle": "^0.5.5",
         "phpdocumentor/reflection-docblock": "^5.3",

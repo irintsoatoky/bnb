@@ -2,6 +2,12 @@
     "cocur/slugify": {
         "version": "v4.0.0"
     },
+    "components/bootstrap": {
+        "version": "3.4.1"
+    },
+    "components/jquery": {
+        "version": "3.6.0"
+    },
     "composer/package-versions-deprecated": {
         "version": "1.11.99.4"
     },
@@ -103,10 +109,16 @@
     "egulias/email-validator": {
         "version": "3.1.2"
     },
+    "eternicode/bootstrap-datepicker": {
+        "version": "v1.9.0"
+    },
     "fakerphp/faker": {
         "version": "v1.16.0"
     },
     "friendsofphp/proxy-manager-lts": {
+        "version": "v1.0.5"
+    },
+    "kriswallsmith/assetic": {
         "version": "v1.0.5"
     },
     "laminas/laminas-code": {
@@ -191,6 +203,9 @@
     },
     "psr/log": {
         "version": "1.1.4"
+    },
+    "robloach/component-installer": {
+        "version": "0.0.12"
     },
     "sebastian/cli-parser": {
         "version": "1.0.1"
