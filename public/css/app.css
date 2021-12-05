@@ -8,6 +8,12 @@ div.ad-title {
     background-position: center center;
 }
 
+div.ad-title .btn{
+    margin-top: 2em;
+    font-size: 1.5em;
+    line-height: 1.5em;
+}
+
 .avatar {
     max-width: 128px;
     max-height: 128px;
@@ -27,4 +33,16 @@ div.ad-title {
 .datepicker table tr td.disabled,
 .datepicker table tr td.disabled:hover {
     color: firebrick !important;
+}
+
+span.rating i{
+    color: goldenrod;
+}
+
+.alert a{
+    text-decoration: none;
+}
+
+.alert .btn{
+    color: white;
 }
