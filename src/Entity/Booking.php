@@ -80,23 +80,24 @@ class Booking
         }
     }
 
-    public function isBookableDates()
+    public function isBookableDates(): bool
     {
-        // 1) Il faut connaître les dates qui sont impossibles pour l'annonce
+        // 1) Dates indisponibles inscrites ds la BD (array)
         $notAvailableDays = $this->ad->getNotAvailableDays();
-
-        // 2) Il faut comparer les dates choisies avec les dates impossibles
+        
+        // 2) Dates souhaitées (choisies) (array)
         $bookingDays = $this->getDays();
 
+        // 3) Format de la date (closure)
         $formatDay = function ($day) {
             return $day->format('Y-m-d');
-        };
+        }; 
 
-        // Tableau des chaines de caractères de mes journées
+        // 4) Conversion de la date Objet en string
         $days = array_map($formatDay, $bookingDays);
-
         $notAvailable = array_map($formatDay, $notAvailableDays);
 
+        // 5) Date dispo différent de Date réservé (recherche du clé ds la BD)
         foreach ($days as $day) {
             if (array_search($day, $notAvailable) !== false) {
                 return false;
@@ -107,7 +108,7 @@ class Booking
     }
 
     /**
-     * Permet de récupérer un tableau des journées qui correspondent à ma réservation
+     * Permet de récupérer un tableau des journées qu'on peut réserver
      *
      * @return array Un tableau d'objets DateTime représentant les jours d'occupation
      */
