@@ -31,10 +31,10 @@ class AppFixtures extends Fixture
         $manager->persist($adminRole);
 
         $adminUser = new User();
-        $adminUser->setFirstName('Miangaly')
-            ->setLastName('Harnelle')
-            ->setEmail('harnelle@yahoo.fr')
-            ->setHash($this->hasher->hashPassword($adminUser, 'admin'))
+        $adminUser->setFirstName('Toky')
+            ->setLastName('RAKOTONDRAFARA')
+            ->setEmail('raktokynyaina@gmail.com')
+            ->setHash($this->hasher->hashPassword($adminUser, 'password'))
             ->setPicture('http://placehold.it/100x75')
             ->setIntroduction($faker->sentence())
             ->setDescription('<p>' . join('</p><p>', $faker->paragraphs(3)) . '</p>')

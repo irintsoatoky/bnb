@@ -14,22 +14,7 @@
         {{ form_start(form) }}
 
         <div class="row">
-            <div class="col">
-                <div class="card bg-light">
-                    <div class="card-header">
-                        <h4 class="card-title">Corriger l'annonce ?</h4>
-                    </div>
-                    <div class="card-body">
-                        {{ form_widget(form) }}
-
-                        <button type="submit" class="btn btn-primary">
-                            <i class="fas fa-check"></i>
-                            Enregistrer les modifications
-                        </button>
-                    </div>
-                </div>
-            </div>
-            <div class="col">
+            <div class="col-lg-6">
                 <div class="card bg-light">
                     <div class="card-header">
                         <h4 class="card-title">Les réservations</h4>
@@ -61,6 +46,7 @@
                         </table>
                     </div>
                 </div>
+
                 <div class="card bg-light mt-5">
                     <div class="card-header">
                         <h4 class="card-title">Les commentaires</h4>
@@ -92,6 +78,22 @@
                                 {% endfor %}
                             </tbody>
                         </table>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <div class="card bg-light">
+                    <div class="card-header">
+                        <h4 class="card-title">Corriger l'annonce ?</h4>
+                    </div>
+                    <div class="card-body">
+                        {{ form_widget(form) }}
+                        <div class="card-footer" style="margin-left: 52%">
+                            <button type="submit" class="btn btn-primary">
+                                <i class="fas fa-check"></i>
+                                Enregistrer les modifications
+                            </button>
+                        </div>
                     </div>
                 </div>
             </div>

@@ -22,7 +22,9 @@
 	<body>
 		{% include 'client/partials/header.html.twig' %}
 
-		{% block body %}{% endblock %}
+		<div class="container-fluid mt-4">
+			{% block body %}{% endblock %}
+		</div>
 
 		{% include 'client/partials/footer.html.twig' %}
 
